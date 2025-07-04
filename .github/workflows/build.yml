@@ -22,10 +22,10 @@ jobs:
     - name: Install dependencies (sem scripts)
       run: composer install --no-dev --ignore-platform-reqs --no-scripts
 
-    - name: Zip project (incluindo vendor)
+    - name: Zip tudo (incluindo dotfiles)
       run: |
-        zip -r viper-with-vendor.zip \
-          artisan app bootstrap config database public resources routes storage vendor composer.json composer.lock
+        rm -f viper-with-vendor.zip
+        zip -r viper-with-vendor.zip . -x "viper-with-vendor.zip"
 
     - name: Upload artifact ZIP
       uses: actions/upload-artifact@v4
