@@ -19,8 +19,8 @@ jobs:
         php-version: '8.2'
         extensions: mbstring, xml, bcmath, zip
 
-    - name: Install dependencies
-      run: composer install --no-dev --ignore-platform-reqs
+    - name: Install dependencies (sem scripts)
+      run: composer install --no-dev --ignore-platform-reqs --no-scripts
 
     - name: Zip project (incluindo vendor)
       run: |
