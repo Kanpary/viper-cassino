@@ -28,7 +28,7 @@ jobs:
           artisan app bootstrap config database public resources routes storage vendor composer.json composer.lock
 
     - name: Upload artifact ZIP
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: viper-with-vendor
         path: viper-with-vendor.zip
